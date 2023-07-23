@@ -1,0 +1,5 @@
+configuration {
+  show-icons: true;
+  icon-theme: "WhiteSur-dark";
+}
+@theme "/home/tlartem/.config/rofi/themes/spotlight-dark.rasi"
