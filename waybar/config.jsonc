@@ -1,0 +1,121 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 50,
+    "modules-left": [
+        "clock",
+        "hyprland/workspaces"
+    ], // "modules-left": ["clock","custom/weather","wlr/workspaces"],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "cpu",
+        "temperature",
+        "hyprland/language",
+        "battery",
+        "tray"
+    ], // "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
+
+    "clock": {
+        "interval": 60,
+        "format": "{: %H:%M}",
+        "max-length": 25
+    },
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "-99": "",
+        "active": "",
+        "default": ""
+      }
+    },   
+
+    "hyprland/window": {
+        "format": "{}",
+	"max-length": 20
+    },
+
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+    },
+
+    "cpu": {
+        "interval": 3,
+        "format": "  {usage}%"
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{temperatureC}°C ",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C "
+    },
+
+    "hyprland/language": {
+        "format": "󰗊 {}",
+        "format-en": "en",
+        "format-ru": "ru",
+        "keyboard-name": "at-translated-set-2-keyboard"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    }
+}
